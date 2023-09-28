@@ -12,7 +12,8 @@
 
   - name: download war file
     ansible.builtin.get_url:
-      url: https://hostname1.jfrog.io/artifactory/jfrog-test/webapp-19.war
+      #url: https://hostname1.jfrog.io/artifactory/jfrog-test/webapp-19.war
+      url: https://hostname1.jfrog.io/artifactory/jfrog-test/webapp-${BUILD_NUMBER}.war
       dest: /home/tomcat/sourcefile/webapp.war
       username: chandanabn95@gmail.com
       password: Password1
@@ -23,11 +24,11 @@
       state: directory
       mode: 0777
 
- # - name: backup file with owner and permissions
-  #  copy:
-   #   src: /opt/tomcat/webapps/webapp.war
-    #  dest: /home/tomcat/backup/webapp.war
-     # remote_src: yes
+  #- name: backup file with owner and permissions
+   # copy:
+    #  src: /opt/tomcat/webapps/webapp.war
+     # dest: /home/tomcat/backup/webapp.war
+      #remote_src: yes
 
   - name: Delete remote war file
     file:
