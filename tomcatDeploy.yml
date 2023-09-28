@@ -2,6 +2,8 @@
 - hosts: websever
   become: yes
   #become_user: tomcat
+  #vars:
+   # req_build: 
   tasks:
 
   - name: create directory 
@@ -36,8 +38,8 @@
       state: absent
 
   - name: deploy file with owner and permissions
-    become: yes
-    become_user: root
+    #become: yes
+    #become_user: root
     copy:
       src: /home/tomcat/sourcefile/webapp.war
       dest: /opt/tomcat/webapps/webapp.war
