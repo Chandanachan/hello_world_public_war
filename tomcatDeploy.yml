@@ -14,7 +14,7 @@
     ansible.builtin.get_url:
       #url: https://hostname1.jfrog.io/artifactory/jfrog-test/webapp-19.war
       url: https://hostname1.jfrog.io/artifactory/jfrog-test/webapp-${BUILD_NUMBER}.war
-      dest: /home/tomcat/sourcefile/webapp.war
+      dest: /home/tomcat/sourcefile/webapp-${BUILD_NUMBER}.war
       username: chandanabn95@gmail.com
       password: Password1
 
