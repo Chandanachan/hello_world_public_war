@@ -36,6 +36,7 @@
 
   - name: deploy file with owner and permissions
     become: yes
+    become_user: root
     copy:
       src: /home/tomcat/sourcefile/webapp.war
       dest: /opt/tomcat/webapps/webapp.war
