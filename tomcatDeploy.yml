@@ -35,7 +35,8 @@
       state: absent
 
   - name: deploy file with owner and permissions
+    become: yes
     copy:
       src: /home/tomcat/sourcefile/webapp.war
-      dest: webapps/webapp.war
+      dest: /opt/tomcat/webapps/webapp.war
       remote_src: yes
