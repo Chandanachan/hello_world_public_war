@@ -2,8 +2,8 @@
 - hosts: websever
   become: yes
   #become_user: tomcat
-  #vars:
-   # req_build: 
+  vars:
+   build_number: '{{BUILD_NUMBER}}' 
   tasks:
 
   - name: create directory 
@@ -14,7 +14,7 @@
 
   - name: download war file
     ansible.builtin.get_url:
-      #url: https://hostname1.jfrog.io/artifactory/jfrog-test/webapp-38.war
+      #url: https://hostname1.jfrog.io/artifactory/jfrog-test/webapp-{{BUILD_NUMBER}}.war
       url: https://hostname1.jfrog.io/artifactory/jfrog-test/*.war
       dest: /home/tomcat/sourcefile/webapp.war
       username: chandanabn95@gmail.com
