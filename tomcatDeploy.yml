@@ -18,7 +18,7 @@
       #url: https://hostname1.jfrog.io/artifactory/jfrog-test/*.war
       dest: /home/tomcat/sourcefile/webapp.war
       username: chandanabn95@gmail.com
-      password: Password1
+      password: Password@1
 
   - name: create directory with a date in name
     file: 
